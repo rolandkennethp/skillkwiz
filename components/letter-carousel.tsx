@@ -76,8 +76,8 @@ export default function LetterCarousel() {
                 index === currentSlide
                   ? "opacity-100 translate-x-0"
                   : index < currentSlide
-                  ? "opacity-0 -translate-x-full"
-                  : "opacity-0 translate-x-full"
+                    ? "opacity-0 -translate-x-full"
+                    : "opacity-0 translate-x-full"
               }`}
             >
               {/* Background Image with Overlay */}

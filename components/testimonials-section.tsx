@@ -92,7 +92,7 @@ export default function TestimonialsSection() {
   // Handle navigation
   const goToPrev = () => {
     setActiveIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
 
     // Reset interval timer when manually navigating

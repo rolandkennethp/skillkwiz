@@ -1,11 +1,12 @@
+import Link from "next/link";
+
 import Image from "next/image";
-import { Play } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full bg-[#00418d] text-white relative overflow-hidden pt-24">
+      <section className="relative w-full bg-[#00418d] text-white overflow-hidden pt-8">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           autoPlay
@@ -16,20 +17,23 @@ export default function AboutPage() {
           <source src="/images/homepage/banner_video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-        <div className="max-w-7xl mx-auto px-6 py-16 relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
+        <div className="max-w-7xl mx-auto px-6 py-10 relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-center mb-4">
             ELEVATE YOUR BUSINESS
           </h1>
-          <p className="text-center max-w-3xl mx-auto text-sm mb-8">
+          <p className="text-center max-w-3xl mx-auto text-sm mb-5">
             Skill Assessments Done With The Utmost Knowledge, Integrity, Trust,
             Respect And Security. Our Objective Is To Provide You With Accurate
             Insights Into The Skill Levels Of Your Current And Prospective
             Workforce.
           </p>
           <div className="flex justify-center">
-            <button className="bg-[#f73e5d] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all">
+            <Link
+              href="/services"
+              className="bg-[#f73e5d] text-white px-8 py-3 rounded-md font-medium hover:bg-opacity-90 transition-all"
+            >
               Sign Up
-            </button>
+            </Link>
           </div>
         </div>
         <div className="absolute right-0 top-0 h-full w-1/2 opacity-20">
@@ -47,15 +51,15 @@ export default function AboutPage() {
       </section>
 
       {/* Features Section */}
-      <section className="w-full bg-white py-8">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-6 auto-rows-min">
-          <div className="group bg-white overflow-hidden hover:bg-[#00418d] transition-all duration-500 p-6 rounded-lg shadow-lg flex flex-col items-center text-center h-[250px] hover:h-[350px]">
+      <section className="w-full bg-white py-5">
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-4 auto-rows-min">
+          <div className="group bg-white overflow-hidden hover:bg-[#00418d] transition-all duration-500 p-5 rounded-lg shadow-lg flex flex-col items-center text-center h-[220px] hover:h-[290px]">
             <Image
               src="/images/aboutpage/eye.gif"
               alt="Eye-if"
               width={200}
               height={200}
-              className="w-auto h-auto max-h-32 object-contain mb-4"
+              className="w-auto h-auto max-h-24 object-contain mb-2"
             />
             <h3 className="text-[#272727] font-bold group-hover:text-white transition-colors duration-300">
               OUR VISION
@@ -66,7 +70,7 @@ export default function AboutPage() {
               not guesswork.
             </p>
           </div>
-          <div className="group bg-white overflow-hidden hover:bg-[#00418d] transition-all duration-500 p-6 rounded-lg shadow-lg flex flex-col items-center text-center h-[250px] hover:h-[350px]">
+          <div className="group bg-white overflow-hidden hover:bg-[#00418d] transition-all duration-500 p-5 rounded-lg shadow-lg flex flex-col items-center text-center h-[220px] hover:h-[290px]">
             {/* <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 border-2 border-[#00418d]">
               <div className="w-12 h-12 border-4 border-[#00418d] rounded-full relative">
                 <div className="absolute w-6 h-6 bg-[#c3dfff] rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
@@ -77,7 +81,7 @@ export default function AboutPage() {
               alt="Eye-if"
               width={200}
               height={200}
-              className="w-auto h-auto max-h-32 object-contain mb-4"
+              className="w-auto h-auto max-h-24 object-contain mb-2"
             />
             <h3 className="text-[#272727] font-bold group-hover:text-white transition-colors duration-300">
               OUR MISSION
@@ -89,7 +93,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="group bg-white overflow-hidden hover:bg-[#00418d] transition-all duration-500 p-6 rounded-lg shadow-lg flex flex-col items-center text-center h-[250px] hover:h-[350px]">
+          <div className="group bg-white overflow-hidden hover:bg-[#00418d] transition-all duration-500 p-5 rounded-lg shadow-lg flex flex-col items-center text-center h-[220px] hover:h-[290px]">
             {/* <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 border-2 border-[#00418d]">
               <div className="w-12 h-12 relative">
                 <div className="absolute w-10 h-10 border-4 border-[#00418d] rounded-full left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"></div>
@@ -101,7 +105,7 @@ export default function AboutPage() {
               alt="Eye-if"
               width={200}
               height={200}
-              className="w-auto h-auto max-h-32 object-contain"
+              className="w-auto h-auto max-h-24 object-contain"
             />
             <h3 className="text-[#272727] font-bold group-hover:text-white transition-colors duration-300">
               OUR PURPOSE
@@ -116,14 +120,14 @@ export default function AboutPage() {
       </section>
 
       {/* About Section */}
-      <section className="w-full bg-white py-12">
+      <section className="w-full bg-white py-6">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex flex-col md:flex-row gap-6 items-center">
             <div className="w-full md:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-[#00418d] mb-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#00418d] mb-3">
                 Who We Are ?
               </h2>
-              <p className="text-[#272727] mb-6">
+              <p className="text-[#272727] mb-3">
                 We are your partner in skill assessment. Our expertise lies in
                 assessing skill levels in people and quantifying them...
               </p>
@@ -165,9 +169,9 @@ export default function AboutPage() {
       </section>
 
       {/* CEO Section */}
-      <section className="w-full bg-white py-12">
+      <section className="w-full bg-white py-6">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row gap-8 items-start">
+          <div className="flex flex-col md:flex-row gap-6 items-start">
             <div className="w-full md:w-1/3">
               <div className="relative">
                 <div className="bg-[#f73e5d] p-4">
@@ -205,26 +209,16 @@ export default function AboutPage() {
       </section>
 
       {/* Video Section */}
-      <section className="w-full bg-white py-12">
+      <section className="w-full bg-white py-6">
         <div className="max-w-7xl mx-auto px-6">
           <div className="relative">
-            <video
-              className="w-full h-auto rounded-lg"
-              controls
-              preload="none"
-              poster="/images/aboutpage/about_video.png"
-            >
+            <video className="w-full h-auto rounded-lg" controls preload="auto">
               <source
                 src="/images/aboutpage/about_video.mp4"
                 type="video/mp4"
               />
               Your browser does not support the video tag.
             </video>
-            {/* <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-20 h-20 bg-[#00418d] rounded-full flex items-center justify-center cursor-pointer hover:bg-opacity-90 transition-all">
-                <Play className="w-10 h-10 text-white ml-1" />
-              </div>
-            </div> */}
           </div>
         </div>
       </section>

@@ -1,0 +1,8 @@
+SkillKwiz Dummy Assessment Report
+
+Candidate: Demo Candidate
+Assessment: Sample Skill Assessment
+Score: 85 percentile
+Status: Verified
+
+This is a dummy report provided for the SkillKwiz demonstration website.

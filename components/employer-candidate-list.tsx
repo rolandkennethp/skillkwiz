@@ -134,7 +134,7 @@ export default function EmployerCandidateList() {
                     }
                     onChange={() =>
                       setSelectedGender(
-                        selectedGender === "female" ? "both" : "male"
+                        selectedGender === "female" ? "both" : "male",
                       )
                     }
                     className="w-4 h-4 mr-2"
@@ -150,7 +150,7 @@ export default function EmployerCandidateList() {
                     }
                     onChange={() =>
                       setSelectedGender(
-                        selectedGender === "male" ? "both" : "female"
+                        selectedGender === "male" ? "both" : "female",
                       )
                     }
                     className="w-4 h-4 mr-2"
@@ -238,9 +238,13 @@ export default function EmployerCandidateList() {
                     </div>
                   </div>
                 </div>
-                <button className="bg-[#00bcd4] text-white px-4 py-2 rounded-lg hover:bg-[#00a5bb]">
+                <a
+                  href="/download/dummy-report.txt"
+                  download
+                  className="bg-[#00bcd4] text-white px-4 py-2 rounded-lg hover:bg-[#00a5bb]"
+                >
                   View Report
-                </button>
+                </a>
               </div>
             </div>
           ))}

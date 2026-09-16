@@ -41,7 +41,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/resources" className="hover:underline">
+                <a href="/blog" className="hover:underline">
                   Resources
                 </a>
               </li>

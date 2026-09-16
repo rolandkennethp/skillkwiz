@@ -1,0 +1,3 @@
+SkillKwiz Dummy Download
+
+This is a sample downloadable file for the SkillKwiz demonstration website.

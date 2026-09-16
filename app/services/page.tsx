@@ -16,7 +16,7 @@ export default function ServicesPage() {
   // Authentication state
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userType, setUserType] = useState<"employer" | "employee" | null>(
-    null
+    null,
   );
 
   // Registration success states
@@ -24,6 +24,7 @@ export default function ServicesPage() {
     useState(false);
   const [employerRegistrationSuccess, setEmployerRegistrationSuccess] =
     useState(false);
+  const [assessmentSubmitted, setAssessmentSubmitted] = useState(false);
 
   // Screen states
   const [employeeScreen, setEmployeeScreen] = useState<
@@ -62,6 +63,7 @@ export default function ServicesPage() {
   const continueToEmployeeAssessment = () => {
     setEmployeeRegistrationSuccess(false);
     setEmployeeScreen("assessment");
+    setAssessmentSubmitted(false);
   };
 
   // Continue after employer registration success
@@ -75,7 +77,7 @@ export default function ServicesPage() {
       {/* Background pattern */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/images/background.png"
+          src="/images/homepage/4.png"
           alt="Background"
           fill
           priority
@@ -106,7 +108,28 @@ export default function ServicesPage() {
               {/* Content Panel */}
               {userType === "employee" ? (
                 <div className="bg-gradient-to-r from-[#3a4a7b]/90 to-[#9ba3b9]/90 rounded-lg p-8 backdrop-blur-sm">
-                  {employeeRegistrationSuccess ? (
+                  {assessmentSubmitted ? (
+                    <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 p-6">
+                      <div className="w-full max-w-md rounded-xl bg-white p-8 text-center shadow-2xl">
+                        <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 text-3xl">
+                          ✓
+                        </div>
+                        <h2 className="text-3xl font-bold text-[#00418d] mb-3">
+                          Thank You!
+                        </h2>
+                        <p className="text-gray-600 mb-6">
+                          Your assessment has been submitted successfully.
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => setAssessmentSubmitted(false)}
+                          className="rounded-md bg-[#f73e5d] px-8 py-3 font-medium text-white hover:opacity-90"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                  ) : employeeRegistrationSuccess ? (
                     <SuccessMessage
                       title="Registration Successful!"
                       message="Your employee account has been created successfully. You can now proceed to schedule your assessment."
@@ -118,7 +141,9 @@ export default function ServicesPage() {
                       onNext={handleEmployeeRegistrationComplete}
                     />
                   ) : (
-                    <ScheduleAssessment />
+                    <ScheduleAssessment
+                      onSubmit={() => setAssessmentSubmitted(true)}
+                    />
                   )}
                 </div>
               ) : (

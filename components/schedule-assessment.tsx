@@ -3,7 +3,13 @@
 import { useState } from "react";
 import { Info, Calendar, Clock } from "lucide-react";
 
-export default function ScheduleAssessment() {
+interface ScheduleAssessmentProps {
+  onSubmit?: () => void;
+}
+
+export default function ScheduleAssessment({
+  onSubmit,
+}: ScheduleAssessmentProps) {
   const [selectedCompany, setSelectedCompany] = useState<string>("microsoft");
 
   return (
@@ -267,7 +273,11 @@ export default function ScheduleAssessment() {
 
         {/* Submit Button */}
         <div className="flex justify-center mt-8">
-          <button className="px-20 py-2 rounded bg-gradient-to-r from-[#4ECDC4] to-[#2d8a84] text-white hover:opacity-90">
+          <button
+            type="button"
+            onClick={onSubmit}
+            className="px-20 py-2 rounded bg-gradient-to-r from-[#4ECDC4] to-[#2d8a84] text-white hover:opacity-90"
+          >
             Submit
           </button>
         </div>

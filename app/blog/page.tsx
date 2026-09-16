@@ -15,16 +15,19 @@ export default function BlogPage() {
       img: "/images/blogpage/1.png",
       title: "The Importance of Upskilling in Today's Job Market",
       subtitle: "Why Upskilling Matters in 2025",
+      download: "/download/dummy-file.txt",
     },
     {
       img: "/images/blogpage/2.png",
       title: "How Gamified Learning Enhances Skill Retention",
       subtitle: "The Psychology Behind Gamification",
+      download: "/download/dummy-file.txt",
     },
     {
       img: "/images/blogpage/3.png",
       title: "Soft Skills vs. Hard Skills: What Matters More?",
       subtitle: "The Difference Between Soft and Hard Skills",
+      download: "/download/dummy-file.txt",
     },
   ];
   return (
@@ -57,7 +60,12 @@ export default function BlogPage() {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <div className="relative mb-4 overflow-hidden">
+                  <a
+                    href={post.download}
+                    download
+                    className="relative mb-4 block overflow-hidden"
+                    aria-label={`Download ${post.title}`}
+                  >
                     <Image
                       src={post.img}
                       alt={post.title}
@@ -65,11 +73,15 @@ export default function BlogPage() {
                       height={240}
                       className="w-full h-auto object-cover"
                     />
-                  </div>
+                  </a>
                   <h3 className="text-lg font-bold mb-1">{post.title}</h3>
-                  <p className="text-sm text-[#00418d] font-medium">
+                  <a
+                    href={post.download}
+                    download
+                    className="text-sm text-[#00418d] font-medium hover:underline"
+                  >
                     {post.subtitle}
-                  </p>
+                  </a>
                 </div>
               ))}
             </div>
