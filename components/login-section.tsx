@@ -13,9 +13,9 @@ export default function LoginSection() {
           <div className="w-full md:w-1/2 p-8 flex items-center justify-center">
             <div className="text-center">
               <img
-                src="/images/homepage/8.png"
+                src="/images/lightimage.png"
                 alt="Skill Assessment Library"
-                className="max-w-full h-auto"
+                className="max-w-full object-fill"
               />
             </div>
           </div>

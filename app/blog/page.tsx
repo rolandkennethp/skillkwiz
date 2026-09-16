@@ -1,4 +1,5 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
 
@@ -30,22 +31,25 @@ export default function BlogPage() {
       download: "/download/dummy-file.txt",
     },
   ];
+
   return (
     <>
       {/* Hero Section */}
-      <section className="w-full bg-white py-12">
+      <section className="w-full bg-white py-8">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-center mb-4">
+          {/* Featured Posts */}
+          <div className="mb-10">
+            <h2 className="text-3xl font-bold text-center mb-3">
               Mastering Knowledge & Growth
             </h2>
-            <p className="text-center max-w-3xl mx-auto mb-8">
+
+            <p className="text-center max-w-3xl mx-auto mb-5">
               In a world of constant change, continuous learning is the key to
               success...
             </p>
 
             {/* Indicators */}
-            <div className="flex justify-center gap-2 mb-10">
+            <div className="flex justify-center gap-2 mb-6">
               {blogPosts.map((_, index) => (
                 <div key={index} className={indicatorClasses(index)} />
               ))}
@@ -63,7 +67,7 @@ export default function BlogPage() {
                   <a
                     href={post.download}
                     download
-                    className="relative mb-4 block overflow-hidden"
+                    className="relative mb-3 block overflow-hidden"
                     aria-label={`Download ${post.title}`}
                   >
                     <Image
@@ -74,7 +78,9 @@ export default function BlogPage() {
                       className="w-full h-auto object-cover"
                     />
                   </a>
+
                   <h3 className="text-lg font-bold mb-1">{post.title}</h3>
+
                   <a
                     href={post.download}
                     download
@@ -87,21 +93,11 @@ export default function BlogPage() {
             </div>
           </div>
 
-          {/* Filter Buttons */}
-          {/* <div className="flex justify-center gap-4 mb-12">
-            <button className="px-8 py-2 bg-[#00418d] text-white rounded-full">
-              All Posts
-            </button>
-            <button className="px-8 py-2 bg-[#c3dfff] text-[#00418d] rounded-full">
-              Latest
-            </button>
-          </div> */}
-
           {/* Secondary Blog Posts */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
             {/* Blog Post 4 */}
             <div className="flex flex-col h-full">
-              <div className="relative h-60 mb-4">
+              <div className="relative h-60 mb-3">
                 <Image
                   src="/images/blogpage/4.png"
                   alt="Tech skills"
@@ -110,17 +106,19 @@ export default function BlogPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold mb-2">
+
+              <h3 className="text-xl font-bold mb-1">
                 Top 10 Tech Skills That Can Land You a High-Paying Job
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+
+              <p className="text-sm text-gray-600">
                 Why Tech Skills Are Essential in 2025
               </p>
             </div>
 
             {/* Blog Post 5 */}
             <div className="flex flex-col h-full">
-              <div className="relative h-60 mb-4">
+              <div className="relative h-60 mb-3">
                 <Image
                   src="/images/blogpage/5.png"
                   alt="Learning motivation"
@@ -129,29 +127,32 @@ export default function BlogPage() {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <h3 className="text-xl font-bold mb-2">
+
+              <h3 className="text-xl font-bold mb-1">
                 How to Stay Motivated While Learning New Skills
               </h3>
-              <p className="text-sm text-gray-600 mb-4">
+
+              <p className="text-sm text-gray-600">
                 Why Motivation Is Key to Skill Development
               </p>
             </div>
           </div>
 
           {/* Knowledge Articles */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold mb-6">
+          <div className="mb-8">
+            <h2 className="text-3xl font-bold mb-3">
               Mastering Knowledge & Growth
             </h2>
-            <p className="max-w-4xl mb-12">
+
+            <p className="max-w-4xl mb-7">
               Knowledge is the foundation of growth. Embrace new ideas, sharpen
               your skills, and stay inspired with insights that empower you to
               achieve more in both your personal and professional journey.
             </p>
 
             {/* Knowledge Articles */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="flex gap-4 mb-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5">
+              <div className="flex gap-4">
                 <div className="w-24 h-24 flex-shrink-0">
                   <Image
                     src="/images/blogpage/6.png"
@@ -161,6 +162,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 <div>
                   <p className="text-sm text-gray-600 mb-1">
                     Trends to Watch in 2025
@@ -171,7 +173,7 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4 mb-6">
+              <div className="flex gap-4">
                 <div className="w-24 h-24 flex-shrink-0">
                   <Image
                     src="/images/blogpage/7.png"
@@ -181,6 +183,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 <div>
                   <p className="text-sm text-gray-600 mb-1">
                     Trends to Watch in 2025
@@ -191,7 +194,7 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4 mb-6">
+              <div className="flex gap-4">
                 <div className="w-24 h-24 flex-shrink-0">
                   <Image
                     src="/images/blogpage/8.png"
@@ -201,6 +204,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 <div>
                   <p className="text-sm text-gray-600 mb-1">
                     Trends to Watch in 2025
@@ -211,7 +215,7 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4 mb-6">
+              <div className="flex gap-4">
                 <div className="w-24 h-24 flex-shrink-0">
                   <Image
                     src="/images/blogpage/1.png"
@@ -221,6 +225,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 <div>
                   <p className="text-sm text-gray-600 mb-1">
                     Trends to Watch in 2025
@@ -231,7 +236,7 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4 mb-6">
+              <div className="flex gap-4">
                 <div className="w-24 h-24 flex-shrink-0">
                   <Image
                     src="/images/blogpage/4.png"
@@ -241,6 +246,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 <div>
                   <p className="text-sm text-gray-600 mb-1">
                     Trends to Watch in 2025
@@ -251,7 +257,7 @@ export default function BlogPage() {
                 </div>
               </div>
 
-              <div className="flex gap-4 mb-6">
+              <div className="flex gap-4">
                 <div className="w-24 h-24 flex-shrink-0">
                   <Image
                     src="/images/blogpage/2.png"
@@ -261,6 +267,7 @@ export default function BlogPage() {
                     className="w-full h-full object-cover"
                   />
                 </div>
+
                 <div>
                   <p className="text-sm text-gray-600 mb-1">
                     Trends to Watch in 2025
